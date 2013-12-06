@@ -11,38 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206195757) do
+ActiveRecord::Schema.define(:version => 20131206224527) do
 
   create_table "answer_choices", :force => true do |t|
-    t.string   "text"
-    t.integer  "question_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.text     "text",        :limit => 255, :null => false
+    t.integer  "question_id",                :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "polls", :force => true do |t|
-    t.string   "title"
-    t.integer  "author_id"
+    t.string   "title",      :null => false
+    t.integer  "author_id",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "questions", :force => true do |t|
-    t.text     "text"
-    t.integer  "poll_id"
+    t.text     "text",       :null => false
+    t.integer  "poll_id",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "responses", :force => true do |t|
-    t.integer  "respondent_id"
-    t.integer  "answer_choice_id"
+    t.integer  "respondent_id",    :null => false
+    t.integer  "answer_choice_id", :null => false
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

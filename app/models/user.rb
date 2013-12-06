@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :name
+  validates :name, :presence => true
 
   has_many(
     :authored_polls,
@@ -26,6 +27,5 @@ class User < ActiveRecord::Base
     :through => :chosen_answers,
     :source => :question
   )
-
 
 end

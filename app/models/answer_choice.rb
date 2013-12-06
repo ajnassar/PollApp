@@ -1,5 +1,6 @@
 class AnswerChoice < ActiveRecord::Base
   attr_accessible :text, :question_id
+  validates :question_id, :text, :presence => true
 
   has_many(
     :responses,
