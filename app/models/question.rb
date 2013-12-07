@@ -16,4 +16,15 @@ class Question < ActiveRecord::Base
     :class_name => "Poll"
   )
 
+  def results
+    answer_hash = {}
+    answers = AnswerChoice.includes(:responses)
+    .where("answer_choices.question_id = #{self.id}")
+
+    answers.each do |answer|
+      answer_hash[answer.text] = answer.responses.length
+    end
+    answer_hash
+  end
+
 end
