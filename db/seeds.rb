@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 ActiveRecord::Base.transaction do
-
-  Response.create!({ :respondent_id => 1, :answer_choice_id => 1 })
-  Response.create!({ :respondent_id => 1, :answer_choice_id => 4 })
-  Response.create!({ :respondent_id => 1, :answer_choice_id => 7 })
-  Response.create!({ :respondent_id => 2, :answer_choice_id => 1 })
+  #
+  # Response.create!({ :respondent_id => 1, :answer_choice_id => 1 })
+  # Response.create!({ :respondent_id => 1, :answer_choice_id => 4 })
+  # Response.create!({ :respondent_id => 1, :answer_choice_id => 7 })
+  # Response.create!({ :respondent_id => 2, :answer_choice_id => 1 })
 
   # (1..10).each do |user|
   #   User.create!({ :name => "User#{user}" })
